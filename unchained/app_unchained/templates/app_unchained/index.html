@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP UNCHAINED</title>
+</head>
+<body>
+    <h1>Django is legendary</h1>
+    <a href="/admin"><button>Admin</button></a>
+    <a href="{% url 'app_unchained:chat' %}"><button>Chat</button></a>
+    <h2>Liste des question</h2>
+    {% if questions %}
+    <ul>
+        {% for question in questions %}
+        <li>
+           {{question.text}}<a href="{% url 'app_unchained:detail' question.id %}"> <button class="button">Aller au détail</button></a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <a href="{% url 'app_unchained:create' %}" ><button>Créer une question</button></a>
+</body>
+</html>

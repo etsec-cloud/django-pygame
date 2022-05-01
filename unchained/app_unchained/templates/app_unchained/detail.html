@@ -1,0 +1,8 @@
+
+{% block content %}
+ <h1>Details</h1>
+ <p> Id : {{ question.id }}</p>
+ <p> Text : {{ question.text }}</p>
+ <a href="{% url 'app_unchained:update' question.id %}" > <button>Update</button></a>
+ <a href="{% url 'app_unchained:delete' question.id %}" > <button>Delete</button></a>
+{% endblock %}
